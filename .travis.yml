@@ -1,9 +1,10 @@
 language: node.js
 node.js: 
   - 12.21.0
+
 jdk:
   - oraclejdk8
 addon:
   sonarcloud: true
 script:
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=fedemos123-github -Dsonar.projectKey=Calculadora-tpi -Dsonar.sources='./app' -X
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=Calculadora-tpi -Dsonar.sources='./app' -X
