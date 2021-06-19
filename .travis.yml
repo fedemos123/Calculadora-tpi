@@ -9,3 +9,5 @@ addon:
 script:
   - npm run coverage
   - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=fedemos123 -Dsonar.projectKey=Calculadora-tpi -Dsonar.sources='./app' -X
+after_success:
+  - npm run coveralls
