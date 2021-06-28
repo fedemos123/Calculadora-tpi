@@ -1,6 +1,6 @@
 'use strict';
 
-var a = 'hola mundo!';
+var a = require('./app/holam');
 
 const express = require('express')
 
