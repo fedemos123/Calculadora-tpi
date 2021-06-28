@@ -27,6 +27,9 @@ script:
   - docker tag fedemos123/tpi-is 
     registry.heroku.com/$HEROKU_APP_NAME/web
 
+notifications:
+  slack: trabajodeis:Giyiq8DAlvuWDB4aV3Lb1s3v
+
 deploy:
   provider: script
   script:
