@@ -13,4 +13,3 @@ describe('Testeando: ', function() {
     });
 })
 
-//npm run coverage se agregó
