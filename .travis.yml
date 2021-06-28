@@ -22,7 +22,7 @@ addon:
 
 script:
   - npm run coverage
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=fedemos123 -Dsonar.projectKey=Calculadora-tpi -Dsonar.sources='./app' -X
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=fedemos123 -Dsonar.projectKey=Calculadora-tpi -Dsonar.sources='./index' -X
   - docker build -t fedemos123/tpi-is .
   - docker tag fedemos123/tpi-is 
     registry.heroku.com/$HEROKU_APP_NAME/web
