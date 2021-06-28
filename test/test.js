@@ -1,7 +1,14 @@
 'use strict';
 
-var expect = require("chai").expect;
+var chai = require("chai");
+var assert = chai.assert;
+var holam = require('../app/holam');
 
-var a = require("../app/holam");
-
-expect(a).to.be.a('hola mundo!');
+describe('Testeando: ', function() {
+    describe('Checkeando la funcion holaTest', function(){
+        it('Checkeo del valor retornado usando: assert.equal ', function(){
+            var result = holam.holaTest();
+            assert.equal(result, 'hola mundo!');
+        });
+    });
+})
