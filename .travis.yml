@@ -1,13 +1,43 @@
+sudo: required
+
 language: node.js
+
 node.js: 
   - 12.21.0
 
+services:
+  - docker
+
+before_install:
+  # install heroku CLI
+  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
+
 jdk:
   - oraclejdk8
+
 addon:
   sonarcloud: true
+
 script:
   - npm run coverage
   - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=fedemos123 -Dsonar.projectKey=Calculadora-tpi -Dsonar.sources='./app' -X
+  - docker build -t fedemos123/tpi-is .
+  - docker tag fedemos123/tpi-is 
+    registry.heroku.com/$HEROKU_APP_NAME/web
+
+deploy:
+  provider: script
+  script:
+    # push to dockerhub
+    docker push fedemos123/tpi-is;
+    docker push registry.heroku.com/$HEROKU_APP_NAME/web;
+    heroku container:release web --app $HEROKU_APP_NAME  
+  on:
+    branch: main
+
 after_success:
   - npm run coveralls
+
+
