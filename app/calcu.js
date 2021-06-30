@@ -1,6 +1,6 @@
 'use strict';
 
-//sumar
+//sumas
 function suma(a, b) {
   return a + b +1;
 }
