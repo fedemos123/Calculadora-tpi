@@ -1,8 +1,8 @@
 'use strict';
 
-//suma
+//sumar
 function suma(a, b) {
-  return a + b +1 ;
+  return a + b +1;
 }
 
 
