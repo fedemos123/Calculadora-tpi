@@ -21,7 +21,7 @@
   "homepage": "https://github.com/fedemos123/Calculadora-tpi#readme",
   "dependencies": {
     "-": "^0.0.1",
-    "chai": "^4.3.4",
+    "chai": "^4.3.7",
     "express": "^4.17.1",
     "mocha": "^9.0.1",
     "save-dev": "^0.0.1-security"
