@@ -23,7 +23,7 @@
     "-": "^0.0.1",
     "chai": "^4.3.4",
     "express": "^4.17.1",
-    "mocha": "^9.0.1",
+    "mocha": "^9.2.2",
     "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
